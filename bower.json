@@ -1,0 +1,23 @@
+{
+  "name": "LedPanel",
+  "version": "1.0.0",
+  "homepage": "https://github.com/webreattivo/LedPanel",
+  "authors": [
+    "WebReattivo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_component",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.2.0",
+    "jquery": "~2.1.4"
+  }
+}

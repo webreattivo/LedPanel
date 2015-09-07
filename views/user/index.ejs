@@ -1,0 +1,17 @@
+<% layout('../layout/layout') -%>
+<% include ../layout/header.ejs %>
+
+<div class="container">
+  <form class="form-signin" method="post" action="/new-user">
+        <h2 class="form-signin-heading">New User</h2>
+        <label for="inputFullname" class="sr-only">Fullname</label>
+        <input name="fullname" type="text" id="inputFullname" class="form-control" placeholder="Fullname" required autofocus>
+
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+</div> <!-- /container -->
