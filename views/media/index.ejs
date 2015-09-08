@@ -1,0 +1,36 @@
+<% layout('../layout/layout') -%>
+<% include ../layout/header.ejs %>
+
+<h3>List Media</h3>
+<hr>
+
+<div class="row">
+<div class="col-lg-12">
+	<a href="/media/add" class="btn btn-success pull-right">Add Media</a>
+	<% if (message.length > 0) { %>
+	   <div class="alert alert-success"><%= message %></div>
+	 <% } %>
+</div>
+</div>
+
+<div class="row marketing">
+
+	<% if(medias.length > 0) { %>
+        <table class="table table-bordered" style="background-color: #ffffff;">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% medias.forEach(function (media){ %>
+            <tr>
+                <td><% if(media.title) { %> <%= media.title %> <% } else { %> No title <% } %></td>
+                <td></td>
+            </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+</div>

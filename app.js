@@ -11,6 +11,9 @@ var express = require('express')
 // Connect Mongo DB
 require('./config/mongo');
 
+// Model
+require('./models/media');
+
 var app = express();
 
 // view engine setup
@@ -22,7 +25,7 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('express-session')({
@@ -39,10 +42,10 @@ require('./config/passport');
 
 // routes
 var index = require('./routes/index');
-var video = require('./routes/video');
+var media = require('./routes/media');
 
 app.use('/', index);
-app.use('/video', auth, video);
+app.use('/media', auth, media);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

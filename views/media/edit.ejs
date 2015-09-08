@@ -1,0 +1,42 @@
+<% layout('../layout/layout') -%>
+<% include ../layout/header.ejs %>
+
+<h3>Media</h3>
+<hr>
+
+<div class="row">
+<div class="col-lg-12">
+	<a href="/media" class="btn btn-success pull-right">Go Back</a>
+</div>
+</div>
+
+<div class="row marketing">
+	<form action="" method="post" enctype="multipart/form-data" id="upload-media" class="dropzone">
+		<input type="hidden" name="id" value="<%= id %>" />
+	</form>
+
+	<form action="" method="post">
+	  <input type="hidden" name="id" value="<%= id %>" />
+	  <div class="form-group">
+	    <label for="forName">Name Media</label>
+	    <input type="text" class="form-control" id="forName" placeholder="Name Media" name="title">
+	  </div>
+	  <div class="form-group">
+	    <label for="forDescription">Description</label>
+	    <textarea class="form-control" rows="3" name="description" id="forDescription" placeholder="Description"></textarea>
+	  </div>
+	  
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="visibility" id="optionsRadios1" value="1" checked> Public
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="visibility" id="optionsRadios2" value="2"> Private
+		  </label>
+		</div>
+
+	  <button type="submit" class="btn btn-default">Save</button>
+	</form>
+</div>

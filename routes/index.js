@@ -15,7 +15,7 @@ router
     })
 
     .post('/', passport.authenticate('local', options), function (req, res) {
-        res.redirect('/video');
+        res.redirect('/media');
     });
 
 router
