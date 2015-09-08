@@ -5,6 +5,7 @@ var express = require('express')
     , bodyParser = require('body-parser')
     , engine = require('ejs-locals')
     , flash = require('connect-flash')
+    , omx = require('omxcontrol')
     , passport = require('passport')
     , auth = require('./auth');
 
@@ -36,6 +37,7 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(omx());
 
 // Passport
 require('./config/passport');
@@ -43,9 +45,11 @@ require('./config/passport');
 // routes
 var index = require('./routes/index');
 var media = require('./routes/media');
+var raspberry = require('./routes/raspberry');
 
 app.use('/', index);
 app.use('/media', auth, media);
+app.use('/raspberry', auth, raspberry);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

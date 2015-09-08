@@ -14,7 +14,6 @@
 </div>
 
 <div class="row marketing">
-
 	<% if(medias.length > 0) { %>
         <table class="table table-bordered" style="background-color: #ffffff;">
             <thead>
@@ -27,7 +26,20 @@
             <% medias.forEach(function (media){ %>
             <tr>
                 <td><% if(media.title) { %> <%= media.title %> <% } else { %> No title <% } %></td>
-                <td></td>
+                <td>
+					<!-- Split button -->
+					<div class="btn-group">
+					  <a href="/media/edit/<%= media._id %>" class="btn btn-success">Modifica</a>
+					  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <span class="caret"></span>
+					    <span class="sr-only">Toggle Dropdown</span>
+					  </button>
+					  <ul class="dropdown-menu">
+						<li><a href="#">Preview</a></li>
+					    <li><a href="/raspberry/view/<%= media._id %>">Send On Raspberry</a></li>
+					  </ul>
+					</div>
+                </td>
             </tr>
             <% }); %>
             </tbody>
