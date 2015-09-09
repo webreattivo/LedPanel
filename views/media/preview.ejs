@@ -3,7 +3,7 @@
 
 <div class="row">
 <div class="col-lg-12">
-    <h3 class="pull-left">Remove Media</h3>
+    <h3 class="pull-left">Preview Media "<%= media.title %>"</h3>
     <a href="/media" class="btn btn-success pull-right"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
 </div>
 </div>
@@ -15,10 +15,8 @@
 </div>
 
 <div class="row marketing">
-
-	<h4>Are you sure remove "<%= media.title %>"?</h4>
-
-	<form method="post" action="/media/remove/<%= media._id %>">
-	<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove</button>
-	</form>
+<video controls>
+  	<source src="/uploads/<%= media.file %>" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
 </div>

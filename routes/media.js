@@ -139,7 +139,7 @@ router
                 return
             }
 
-            fs.unlink('./uploads/' + media.file, function (err) {
+            fs.unlink('./public/uploads/' + media.file, function (err) {
 
                 if(err) {
                     res.status(500).send(err);
@@ -195,6 +195,30 @@ router
                         res.status(500).send(err);
                     }
                 });
+            });
+        });
+    });
+
+/* GET preview media */
+router
+    .get('/preview/:id', function (req, res, next) {
+
+        Media.findById(req.params.id).exec(function (err, media) {
+
+            if (err) {
+                res.status(500).send('Error Getting Media');
+                return
+            }
+
+            if (!media) {
+                res.status(404).render('404', {title: 'Media Not Found', message: 'Media Not Found'});
+                return
+            }
+
+            res.render('media/preview', {
+                title: 'Preview Media',
+                username: req.session.passport.user,
+                media: media
             });
         });
     });

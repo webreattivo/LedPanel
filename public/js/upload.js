@@ -4,6 +4,7 @@ Dropzone.options.uploadMedia = {
     init: function () {
         this.on("success", function (file, response) {
             $('#nameMedia').val(file.name);
+            $('#submitSave').prop('disabled', false);
         });
     }
 };

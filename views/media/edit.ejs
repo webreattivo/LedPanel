@@ -1,13 +1,17 @@
 <% layout('../layout/layout') -%>
 <% include ../layout/header.ejs %>
 
-<h3>Media</h3>
-<hr>
-
 <div class="row">
 <div class="col-lg-12">
-	<a href="/media" class="btn btn-success pull-right">Go Back</a>
+    <h3 class="pull-left">Media</h3>
+    <a href="/media" class="btn btn-success pull-right"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
 </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <hr />
+    </div>
 </div>
 
 <div class="row marketing">
@@ -40,6 +44,6 @@
 		  </label>
 		</div>
 
-	  <button type="submit" class="btn btn-success btn-lg">Save</button>
+	  <button type="submit" class="btn btn-success btn-lg" id="submitSave" disabled="disabled">Save</button>
 	</form>
 </div>

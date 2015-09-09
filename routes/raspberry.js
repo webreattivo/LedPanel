@@ -23,7 +23,7 @@ router.get('/view/:id', function (req, res, next) {
 router.get('/play/:id', function (req, res, next) {
 
     Media.findById(req.params.id).exec(function (err, media) {
-        omx.start('uploads/' + media.file);
+        omx.start('public/uploads/' + media.file);
         res.json({});
     });
 });
