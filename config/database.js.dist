@@ -2,7 +2,9 @@ var config = {
     db: {
         host: '127.0.0.1',
         port: 27017,
-        db: 'db'
+        db: 'mydatabase',
+        username: 'myusername',
+        password: 'mypassword'
     }
 };
 module.exports = config;
