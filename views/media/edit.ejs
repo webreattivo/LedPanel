@@ -11,32 +11,35 @@
 </div>
 
 <div class="row marketing">
-	<form action="" method="post" enctype="multipart/form-data" id="upload-media" class="dropzone">
-		<input type="hidden" name="id" value="<%= id %>" />
-	</form>
 
-	<form action="" method="post">
+	<% if(!media.file) { %> 
+		<form action="" method="post" enctype="multipart/form-data" id="upload-media" class="dropzone">
+			<input type="hidden" name="id" value="<%= id %>" />
+		</form>
+	<% } %>
+	
+	<form action="" method="post" class="top-30">
 	  <input type="hidden" name="id" value="<%= id %>" />
 	  <div class="form-group">
-	    <label for="forName">Name Media</label>
-	    <input type="text" class="form-control" id="forName" placeholder="Name Media" name="title">
+	    <label for="nameMedia">Name</label>
+	    <input type="text" class="form-control" id="nameMedia" placeholder="Name" value="<%= media.title ? media.title : '' %>" name="title">
 	  </div>
 	  <div class="form-group">
 	    <label for="forDescription">Description</label>
-	    <textarea class="form-control" rows="3" name="description" id="forDescription" placeholder="Description"></textarea>
+	    <textarea class="form-control" rows="3" name="description" id="forDescription" placeholder="Description"><%= media.description ? media.description : '' %></textarea>
 	  </div>
 	  
 		<div class="radio">
 		  <label>
-		    <input type="radio" name="visibility" id="optionsRadios1" value="1" checked> Public
+		    <input type="radio" name="visibility" id="visibility1" value="1" <%= media.visibility == 1 || !media.visibility ? 'checked' : ''%>> Public
 		  </label>
 		</div>
 		<div class="radio">
 		  <label>
-		    <input type="radio" name="visibility" id="optionsRadios2" value="2"> Private
+		    <input type="radio" name="visibility" id="visibility2" value="2" <%= media.visibility == 2 ? 'checked' : ''%>> Private
 		  </label>
 		</div>
 
-	  <button type="submit" class="btn btn-default">Save</button>
+	  <button type="submit" class="btn btn-success btn-lg">Save</button>
 	</form>
 </div>

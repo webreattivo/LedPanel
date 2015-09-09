@@ -1,0 +1,20 @@
+<% layout('../layout/layout') -%>
+<% include ../layout/header.ejs %>
+
+<h3>Remove Media</h3>
+<hr>
+
+<div class="row">
+<div class="col-lg-12">
+	<a href="/media" class="btn btn-success pull-right">Go Back</a>
+</div>
+</div>
+
+<div class="row marketing">
+
+	<h4>Are you sure remove "<%= media.title %>"?</h4>
+
+	<form method="post" action="/media/remove/<%= media._id %>">
+	<button type="submit" class="btn btn-danger">Remove</button>
+	</form>
+</div>

@@ -1,12 +1,13 @@
-var multer = require('multer');
+var multer = require('multer')
+    , slugify = require('slugify');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'uploads/')
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + '_' + file.originalname)
+        cb(null, Date.now() + '_' + slugify(file.originalname))
     }
 });
 
-module.exports = multer({ storage: storage }).single('file');
+module.exports = multer({storage: storage}).single('file');

@@ -3,7 +3,7 @@ Dropzone.options.uploadMedia = {
     maxFiles: 1,
     init: function () {
         this.on("success", function (file, response) {
-            console.log('success');
+            $('#nameMedia').val(file.name);
         });
     }
 };
