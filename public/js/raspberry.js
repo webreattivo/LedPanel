@@ -29,7 +29,7 @@ $(document).ready(function() {
         $(showButtonPause).show();
         $(showButtonResume).hide();
         $(showButtonQuit).show();
-        $.get(server + '/raspberry/resume');
+        $.get(server + '/raspberry/resume/' + $(this).data('id'));
     });
 
     $(showButtonQuit).click(function() {

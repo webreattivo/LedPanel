@@ -10,3 +10,4 @@ node_modules
 public/bower_component
 npm-debug.log
 config/database.js
+omxcontrol

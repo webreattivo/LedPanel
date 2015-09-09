@@ -1,0 +1,30 @@
+<% layout('../layout/layout') -%>
+<% include ../layout/header.ejs %>
+
+<div class="row">
+<div class="col-lg-12">
+    <h3 class="pull-left">Error on Raspberry Media</h3>
+    <a href="/media" class="btn btn-success pull-right"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="alert alert-danger" role="alert">
+		Sembra che qualcosa è andato storto, forse c'è già un video in esecuzione su Raspberry? oppure hai spento il raspberry senza uscire dalla riproduzione?<br />
+		<strong>Per risolvere il problema clicca il pulsante di seguito.</strong>
+		</div>
+
+		<div class="text-center">
+			<a href="/raspberry/clear" class="btn btn-primary btn-lg">Clear</a>
+		</div>	
+	</div>
+</div>
+
+<br />

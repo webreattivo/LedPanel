@@ -14,6 +14,7 @@ require('./config/mongo');
 
 // Model
 require('./models/media');
+require('./models/playing');
 
 var app = express();
 
