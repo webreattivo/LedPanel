@@ -11,3 +11,4 @@ public/bower_component
 npm-debug.log
 config/database.js
 omxcontrol
+public/uploads
