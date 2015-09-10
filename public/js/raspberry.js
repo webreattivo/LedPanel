@@ -5,6 +5,7 @@ $(document).ready(function() {
     var buttonPause = $('#buttonPause');
     var buttonResume = $('#buttonResume');
     var buttonQuit = $('#buttonQuit');
+    var buttonClose = $('#buttonClose');
     var buttonVolUp = $('#buttonVolUp');
     var buttonVolDown = $('#buttonVolDown');
     var container = $('#errorMessage');
@@ -98,6 +99,23 @@ $(document).ready(function() {
                     $(buttonResume).hide();
                     $(buttonQuit).hide();
                     $(volume).hide();
+                },
+                500: function (response) {
+                    var output = '<div class="alert alert-danger alert-dismissable">500 Error</div>';
+                    $(container).show().html(output).delay(3000).fadeOut();
+                }
+            }
+        });
+    });
+
+    $(buttonClose).click(function() {
+        $.ajax({
+            url: server + '/raspberry/quit',
+            type: 'GET',
+            cache: false,
+            statusCode: {
+                200: function (response) {
+                    window.location = server + '/media';
                 },
                 500: function (response) {
                     var output = '<div class="alert alert-danger alert-dismissable">500 Error</div>';

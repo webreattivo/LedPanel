@@ -24,7 +24,8 @@ router.get('/view/:id', function (req, res, next) {
         res.render('raspberry/index', {
             title: 'Raspberry View',
             username: req.session.passport.user,
-            media: media
+            media: media,
+            omx: omx.getStatus()
         });
     });
 });
@@ -33,7 +34,8 @@ router.get('/view/:id', function (req, res, next) {
 router.get('/play/:id', function (req, res, next) {
 
     if (omx.isLoaded() || omx.isPlaying()) {
-        omx.stop();
+        res.status(500).json({message: 'Omxplayer is still runnig from a another user. Close all sessions.'});
+        return
     }
 
     Media.findById(req.params.id).exec(function (err, media) {
@@ -50,7 +52,6 @@ router.get('/play/:id', function (req, res, next) {
 
         omx.play('public/uploads/' + media.file);
         res.json({message: 'success'});
-
     });
 });
 
