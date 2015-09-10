@@ -1,9 +1,7 @@
-// Load required packages
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var mongoose = require('mongoose');
-var Users = require('./../models/users');
+var passport = require('passport')
+    , LocalStrategy = require('passport-local').Strategy
+    , User = require('./../models/user');
 
-passport.use(new LocalStrategy(Users.authenticate()));
-passport.serializeUser(Users.serializeUser());
-passport.deserializeUser(Users.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());

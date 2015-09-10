@@ -77,7 +77,9 @@ body {
     border-bottom: 0;
   }
 }
-
+.bottom-10 {
+    margin-bottom: 10px;
+}
 .top-30 {
     margin-top: 30px;
 }

@@ -1,7 +1,7 @@
 var express = require('express')
     , router = express.Router()
     , passport = require('passport')
-    , Users = require('./../models/users');
+    , User = require('./../models/user');
 
 var options = {
     failureRedirect: '/',
@@ -23,28 +23,5 @@ router
         req.logout();
         res.redirect('/');
     });
-
-/* GET add user
- router
- .get('/new-user', function (req, res, next) {
- res.render('user/index', {title: 'Add new user'});
- })
-
- .post('/new-user', function (req, res) {
-
- Users.register(new Users({
- username: req.body.username,
- fullname: req.body.fullname,
- createdDate: Date.now()
- }), req.body.password, function (err, user) {
-
- if (err) {
- throw err;
- }
-
- res.redirect('/video');
- });
- });*/
-
 
 module.exports = router;

@@ -46,10 +46,12 @@ require('./config/passport');
 var index = require('./routes/index');
 var media = require('./routes/media');
 var raspberry = require('./routes/raspberry');
+var user = require('./routes/user');
 
 app.use('/', index);
 app.use('/media', auth, media);
 app.use('/raspberry', auth, raspberry);
+app.use('/user', auth, user);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
