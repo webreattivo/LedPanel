@@ -32,7 +32,7 @@ router.get('/view/:id', function (req, res, next) {
 /* play media */
 router.get('/play/:id', function (req, res, next) {
 
-    if (omx.isLoaded || omx.isPlaying) {
+    if (omx.isLoaded() || omx.isPlaying()) {
         omx.stop();
     }
 
@@ -49,7 +49,7 @@ router.get('/play/:id', function (req, res, next) {
         }
 
         omx.play('public/uploads/' + media.file);
-        res.json({message: 'sucecss'});
+        res.json({message: 'success'});
 
     });
 });
@@ -58,7 +58,7 @@ router.get('/play/:id', function (req, res, next) {
 router.get('/pause', function (req, res, next) {
 
     omx.pause();
-    res.json({message: 'sucecss'});
+    res.json({message: 'success'});
 });
 
 /* resume media */
@@ -77,7 +77,7 @@ router.get('/resume/:id', function (req, res, next) {
         }
 
         omx.play();
-        res.json({message: 'sucecss'});
+        res.json({message: 'success'});
     });
 
 });
@@ -86,7 +86,7 @@ router.get('/resume/:id', function (req, res, next) {
 router.get('/quit', function (req, res, next) {
 
     omx.stop();
-    res.json({message: 'sucecss'});
+    res.json({message: 'success'});
 });
 
 /* pause media */
@@ -98,7 +98,7 @@ router.get('/vol/:type', function (req, res, next) {
         omx.voldown();
     }
 
-    res.json({message: 'sucecss'});
+    res.json({message: 'success'});
 });
 
 module.exports = router;
