@@ -89,4 +89,16 @@ router.get('/quit', function (req, res, next) {
     res.json({message: 'sucecss'});
 });
 
+/* pause media */
+router.get('/vol/:type', function (req, res, next) {
+
+    if(req.params.type == 'up') {
+        omx.volup();
+    } else {
+        omx.voldown();
+    }
+
+    res.json({message: 'sucecss'});
+});
+
 module.exports = router;

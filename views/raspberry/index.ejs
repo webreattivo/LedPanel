@@ -11,16 +11,24 @@
 <div class="row">
     <div class="col-lg-12">
         <hr />
-        <div id="error-message" style="display: none;"></div>
+        <div id="errorMessage" style="display: none;"></div>
+        <div id="volMessage" style="display: none;"></div>
     </div>
 </div>
 
 <div class="row">
 	<div class="col-lg-12 text-center">
-		<a class="btn btn-default btn-lg" href="javascript:void(0);" data-id="<%= media._id %>" role="button" id="showButtonPlay"> <span class="glyphicon glyphicon-play"></span> Play</a>
-		<a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" id="showButtonPause"><span class="glyphicon glyphicon-pause"></span> Pause</a>
-		<a class="btn btn-default btn-lg" href="javascript:void(0);" data-id="<%= media._id %>" role="button" id="showButtonResume"><span class="glyphicon glyphicon-play"></span> Resume</a>
-		<a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" id="showButtonQuit"><span class="glyphicon glyphicon-stop"></span> Quit</a>
+		<a class="btn btn-default btn-lg" href="javascript:void(0);" data-id="<%= media._id %>" role="button" id="buttonPlay"> <span class="glyphicon glyphicon-play"></span> Play</a>
+		<a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" id="buttonPause"><span class="glyphicon glyphicon-pause"></span> Pause</a>
+		<a class="btn btn-default btn-lg" href="javascript:void(0);" data-id="<%= media._id %>" role="button" id="buttonResume"><span class="glyphicon glyphicon-play"></span> Resume</a>
+		<a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" id="buttonQuit"><span class="glyphicon glyphicon-stop"></span> Quit</a>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 10px; display: none;" id="volume">
+	<div class="col-lg-12 text-center">
+		<a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" id="buttonVolDown"> <span class="glyphicon glyphicon-volume-down"></span> Vol Down</a> 
+		<a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" id="buttonVolUp"><span class="glyphicon glyphicon-volume-up"></span> Vol Up</a>
 	</div>
 </div>
 
